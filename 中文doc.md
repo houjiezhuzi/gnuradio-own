@@ -11,7 +11,7 @@ Since GNU Radio is software, it can only handle digital data. Usually, complex b
 
 GNU Radio 的应用主要是用 Python 编程语言来编写的。但是其核心信号处理模块是 C++ 在带浮点运算的微处理器上构建的。因此，开发者能够简单快速的构建一个实时、高容量的无线通信系统。
 #### 必须通过编程来使用 GUN Radio 吗?
-这无疑是最佳途径。尽管如此，无需编程也还是能做些事情的。首先，它提供 GNU Radio Companion，一个同 Simulink 相似的图形化用户界面。通过对图形的简单的拖和拉便可生成各种信号处理应用程序。其次，GNU Radio 自带一组现成的工具及功能程序（tools and utility programs）。这些工具可以担当大多数基本操作，比如记录射频信号并对其进行频谱分析。对此充满幻想，不妨阅读一下 如何着手 GNU Radio?
+这无疑是最佳途径。尽管如此，无需编程也还是能做些事情的。首先，它提供 [GNU Radio Companion](http://gnuradio.microembedded.com/gnuradiocompanion)，一个同 Simulink 相似的图形化用户界面。通过对图形的简单的拖和拉便可生成各种信号处理应用程序。其次，GNU Radio 自带一组现成的[工具及功能程序](https://wiki.gnuradio.org/index.php/Main_Page#Using-the-included-tools-and-utility-programs)（[tools and utility programs](https://wiki.gnuradio.org/index.php/Main_Page#Using-the-included-tools-and-utility-programs)）。这些工具可以担当大多数基本操作，比如记录射频信号并对其进行频谱分析。对此充满幻想，不妨阅读一下 [如何着手 GNU Radio](http://gnuradio.microembedded.com/howtouse)?
 
 但是无论如何，如若想要扩展 GUN Radio（比如，添加新的功能），编写代码便是不可避免的工作。构建比较精巧复杂的应用时 GUN Radio Companion 便很难胜任，Python 便是首当其冲的选择。关联性能优劣的代码自然是 C++ 的角色。
 #### GNU Radio 的版权执照?
@@ -20,3 +20,6 @@ GNU Radio 遵从 GNU GPL V3.0. 所有,其代码归 FSF - Free Software Foundatio
 在安装成功 GNU Radio 之后，系统便自带很多例程。诸如，数字化传输数据，接收模拟信号等等的工具。有人将历程发布到第三方项目库管理系统比如 CGRAN 上。也有人将其发布到项目列表（list of projects）上。
 #### 数字信号处理、基带、同步 ... 这些概念的涵义是什么？
 满脑都是这些问题，可以肯定在使用 GNU Radio 的过程中遇到了诸多困难。具备很多信号处理的理论知识是能够编写信号处理及无线通信的软件的前提。尽管如此还是那句老话，不要被困难所弃累！抓本书开始阅读，写一些代码看看会发生什么事情。在此一个小小的建议：在没有完全理解诸如复合基带（complex baseband）之类的概念之前不要求助邮件列表 :-)。
+
+
+###### source: http://gnuradio.microembedded.com/whatisgr
