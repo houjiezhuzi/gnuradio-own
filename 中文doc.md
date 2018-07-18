@@ -21,6 +21,16 @@ GNU Radio 遵从 GNU GPL V3.0. 所有,其代码归 FSF - Free Software Foundatio
 #### 数字信号处理、基带、同步 ... 这些概念的涵义是什么？
 满脑都是这些问题，可以肯定在使用 GNU Radio 的过程中遇到了诸多困难。具备很多信号处理的理论知识是能够编写信号处理及无线通信的软件的前提。尽管如此还是那句老话，不要被困难所弃累！抓本书开始阅读，写一些代码看看会发生什么事情。在此一个小小的建议：在没有完全理解诸如复合基带（complex baseband）之类的概念之前不要求助邮件列表 :-)。
 
+### 欢迎来到 GNU Radio 社区
+#### 序言
+GNU Radio 是免费开源的软件开发工具套件。它提供信号运行和处理的模块，用它可以在唾手可得的低成本的外部射频（RF）硬件和通用微处理器上实现软件定义无线电、或无硬件的模拟环境。这套套件广泛用于业余爱好者，学术机构和商业机构用来研究和构建无线通信系统。
+
+GNU Radio 的应用主要是用 Python 编程语言来编写的。但是其核心信号处理模块是 C++ 在带浮点运算的微处理器上构建的。因此，开发者能够简单快速的构建一个实时、高容量的无线通信系统。
+
+尽管其主要功用不是用来做仿真器，GNU Radio 在没有射频 RF 硬件部件的境况下还可用作对预先存储或（信号发生器）生成的数据进行信号处理的算法研究的平台。
+
+GNU Radio 遵从 GNU GPL V3.0. 所有，其代码归 FSF - Free Software Foundation （自由软件基金）所有。
+#### 着手
 以前从未接触过 GNU Radio，下面这些页面将帮助如何运行安装 GNU Radio、及展示如何着手这个软件无线电工具的第一步。
 * [GNU Radio 是什么、为何需要它？](http://gnuradio.microembedded.com/whatisgr) - 读读这篇文章，如果对 GNU Radio 项目一无所知。 
 * [安装指导](http://gnuradio.microembedded.com/installinggr) - 这篇文件阐述安装 GNU Radio 所涉及的所有。
@@ -34,4 +44,51 @@ GNU Radio 遵从 GNU GPL V3.0. 所有,其代码归 FSF - Free Software Foundatio
     * [老旧文档](https://wiki.gnuradio.org/index.php/Main_Page)
 * [Python Manual](https://www.gnuradio.org/doc/sphinx/index.html) - 内容包含所有的模块。
     * [老旧文档](https://wiki.gnuradio.org/index.php/Main_Page)
+#### 社区及交流
+这是一个供大家介入 GNU Radio 的友善社区。下面几点促使大家相互联系。
+* [提问及报告错误](http://gnuradio.microembedded.com/reportingerrors) - 帮助大家是我们的宗旨，但希望大家能试图自己帮助自己。
+* [邮件列表](http://gnuradio.microembedded.com/mailinglists)- 这是大家的核心交流区，介入之前提请阅读上篇（的注意事项）。
+* [如何染指](http://gnuradio.microembedded.com/howtogetinvolved) - 想搭手项目事宜，或简单地想成为社区的一部分？敬请阅读！
+* [IRC 聊天室](http://gnuradio.microembedded.com/irc) - 一个更实时的交互交流区，欢迎大家在 Freenode 使用 #gnuradio 加入我们的聊天室。
+* [其它 GNU Radio 社区](http://gnuradio.microembedded.com/morecommunity) -  更多形式的 GNU Radio 的网络社区及其它
+* [开发者在线](http://gnuradio.microembedded.com/developerscalls) - 对大家开放的开发者的每月 VoIP 交流会议。
+* [GNU Radio 交流大会](http://gnuradio.microembedded.com/gnuradioconference)
+    * [GRCon2012](http://www.trondeau.com/gnu-radio-conference-2012/)
+    * [GNU Radio Conference 2011](http://www.trondeau.com/gnu-radio-conference-2011/), a real-life developers and enthusiast meeting
+#### 开发 GNU Radio 
+使用 GNU Radio 是让人感到很有趣的事情，但是真正的爱好者来自于对 GNU Radio 新的部件的开发或现实地在改进其源代码。如果想染指这些，那请先读读下面的文章。
+* [社区贡献](http://gnuradio.microembedded.com/development)
+* [GNU Radio 代码规范指导](http://gnuradio.microembedded.com/coding_guide_impl)（Coding and style guidelines for GNU Radio）
+* [模块构架指导](http://gnuradio.microembedded.com/blockscodingguide)（Block structure guide）
+* [如何编写 GNU Radio 信号处理功能块 - How to Write a GNU Radio Signal Processing Block](http://gnuradio.microembedded.com/howto-write-a-bloc)
+* [如何对 GNU Radio 进行 Octave 分析 - How to use Octave or Matlab with GNU Radio](http://gnuradio.microembedded.com/octave)
+* [不同版本的 API 及源代码之间的区别](http://gnuradio.microembedded.com/changesets)
+* [如何用 Git 跟踪你自己的代码](http://gnuradio.microembedded.com/developingwithgit)
+* YouTube feed from Ettus Research [featuring demos and howtos](https://www.youtube.com/user/ettusresearch/feed) for using GNU Radio and USRPs.
+#### 关联硬件
+硬件并非 GNU Radio 的必须部分，它（GNU Radio)其实就是一个纯粹的软件库。尽管如此，在一个能够进行实际的接收和发射信号的硬件平台上开发无线及信号处理的代码的工作不是令人更感到有趣吗？GNU Radio 支持好几种软件无线电平台。
+
+最常用的便是 [通用软件无线电平台 USRP](http://www.microembedded.cn/) 。
+* [关联硬件](http://gnuradio.microembedded.com/hardware) - 可运行 GNU Radio 的所有类型的硬件的预览。
+    * [UHD 中文维客](http://kb.microembedded.com/uhdwikistart)
+* [USRP1](http://gnuradio.microembedded.com/usrp)
+* [USRP2 介绍](http://gnuradio.microembedded.com/usrp2)
+* [子板清单](http://gnuradio.microembedded.com/list_of_usrp_daughterboards)
+#### 更多资讯及第三方延伸
+网络上可以发现更多。在下面可以找到讲义、代码及其它。
+* GNU Radio 全面的文档网络 - 第三方的 GNU Radio 应用及扩展。
+* [建议读物](http://gnuradio.microembedded.com/suggestedreading) - 一组非 GNU Radio 读物诸如：信号处理、无线工程和软件开发的引导读物。
+* [其它服务器上的 GNU Radio 代码](http://gnuradio.microembedded.com/othercode)
+* [第三方贡献的文档及例程](http://gnuradio.microembedded.com/externaldocumentation)
+* [用户群](http://gnuradio.microembedded.com/ourusers)
+* [涉及 GNU Radio 的学术文章](http://gnuradio.microembedded.com/academicpapers)
+* [国内外商业性的支持及培训机构](http://gnuradio.microembedded.com/support)
+* [展示](http://gnuradio.microembedded.com/presentations)
+* [开源基站](http://openbts.microembedded.com/wikistart) - 一个开源 GSM 接口。这是一个独立的项目有其自己的邮件列表。
+* [预录信号源](http://gnuradio.microembedded.com/sampledata) - 如若没有 USRP，可以使用预录信号进行离线分析。
+#### 新闻
+更多的新闻、以及官方的 GNU Radio 的博客请到：[can be found here](http://gnuradio.squarespace.com/).
+
+###### source: http://gnuradio.microembedded.com/  注：Welcome to GNU Radio!（原文出处，翻译整理仅供参考!）
+
 ###### source: http://gnuradio.microembedded.com/whatisgr
