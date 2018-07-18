@@ -21,5 +21,17 @@ GNU Radio 遵从 GNU GPL V3.0. 所有,其代码归 FSF - Free Software Foundatio
 #### 数字信号处理、基带、同步 ... 这些概念的涵义是什么？
 满脑都是这些问题，可以肯定在使用 GNU Radio 的过程中遇到了诸多困难。具备很多信号处理的理论知识是能够编写信号处理及无线通信的软件的前提。尽管如此还是那句老话，不要被困难所弃累！抓本书开始阅读，写一些代码看看会发生什么事情。在此一个小小的建议：在没有完全理解诸如复合基带（complex baseband）之类的概念之前不要求助邮件列表 :-)。
 
+以前从未接触过 GNU Radio，下面这些页面将帮助如何运行安装 GNU Radio、及展示如何着手这个软件无线电工具的第一步。
+* [GNU Radio 是什么、为何需要它？](http://gnuradio.microembedded.com/whatisgr) - 读读这篇文章，如果对 GNU Radio 项目一无所知。 
+* [安装指导](http://gnuradio.microembedded.com/installinggr) - 这篇文件阐述安装 GNU Radio 所涉及的所有。
+    * [下载专区](http://gnuradio.microembedded.com/download) - 径直获取源代码。
+    * [创建指导](http://gnuradio.microembedded.com/buildguide) - 适于专家（高手）：如何基于源码构建 GNU Radio。
+* [GNU Radio 常见问题](http://gnuradio.microembedded.com/faq) - 认真地读读这个。在提出任何问题之前请先认真地、好好地读读这篇文章。
 
+#### 文档
+两本 GNU Radio 手册：一本是 C++ API 另一本是 Python API 。文档的大部分内容来自于使用 Doxygen 对公共头文件的注释的标记。这些（来自于头文件的注释的标记）内容是构成这两本手册的基础。Python 文档通过 [Sphinx](http://www.sphinx-doc.org/en/master/) 提取 Doxygen 的文档及 Python 文档中规范化的注解的内容。
+* [C++ Manual](https://www.gnuradio.org/doc/doxygen/index.html) - 内容包含所有的模块。
+    * [老旧文档](https://wiki.gnuradio.org/index.php/Main_Page)
+* [Python Manual](https://www.gnuradio.org/doc/sphinx/index.html) - 内容包含所有的模块。
+    * [老旧文档](https://wiki.gnuradio.org/index.php/Main_Page)
 ###### source: http://gnuradio.microembedded.com/whatisgr
