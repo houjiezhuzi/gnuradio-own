@@ -26,6 +26,7 @@ sudo make
 这个项目的原理是gps-sdr-sim能根据指定的卫星信息文件、坐标信息、采样频率等参数输出二进制的信号文件，将这个二进制文件导入到USRP或者bladeRF之类的无线电射频设备上就可以实现GPS的伪造。
 #### 卫星信息：
 必备，可以在[nasa官网](ftp://cddis.gsfc.nasa.gov/gnss/data/daily/)下载到最新的信息文件，项目源码中已经包括了一个旧的信息文件brdc3540.14n也可以使用。
+download: ftp://cddis.gsfc.nasa.gov/gnss/data/daily/
 #### 坐标信息：
 坐标信息有三种方式输入：
 ```
