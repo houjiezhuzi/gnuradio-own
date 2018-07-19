@@ -71,3 +71,20 @@ Options:
 经过一段时间，就可以生成一个达到2.1G的二进制文件。
 ![t](/images/uhd_1.png)
 提示：坐标信息可以在Google地图上左键点击你想要的位置查看到并输入。
+![2](/images/uhd_2.png)
+#### 导入USRP
+注意：导入之前请确定USRP的工作情况，USRP的配置可以参考[Ubuntu14.04下GNU Radio的安装以及USRP N210配置](https://blog.csdn.net/sinat_26599509/article/details/51993813)。
+
+导入USRP使用的是GNU Radio，其中项目中的py文件就是调用了GNU Radio的API，将二进制文件通过byte读入然后转成short，然后再从short转成complex输出到USRP Sink中。命令如下：
+```Shell
+> gps-sdr-sim-uhd.py -t gpssim.bin -s 2500000 -x 0
+```
+其中-s参数代表采样率，-x代表增益。
+
+正常的情况下可以看到输出一个一个字母U，每一个U代表一次传输速度的不稳定，理想的情况是只有一个字母U，如果字母U出现的频率太快了说明采样率太高了。
+![3](/images/uhd_3.png)
+#### 测试结果
+注意：定位过程需要一段时间，30s到一分钟，要耐心等待。
+![4](/images/uhd_4.png)
+![5](/images/uhd_5.png)
+![6](/images/uhd_6.png)
