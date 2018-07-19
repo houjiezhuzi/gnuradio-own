@@ -20,7 +20,7 @@ sudo apt-get install gnuradio
 sudo gnuradio-companion
 ```
 成功打开GNU Radio的话代表GNU Radio安装成功。
-![usep1](/images/usrp_1.png)
+![usep1](/docs_zh/images/usrp_1.png)
 注意：最好使用su -命令来切换到root账户再打开GNU Radio，不然会出现一些环境变量的错误提示。
 #### USRP配置
 我使用的是原装的Ettus USRP N210设备，是千兆网口连接的型号，一定要记得使用千兆网卡和千兆网线，一开始我使用了百兆的USB网卡连接之后并没有成功，具体是不是因为这个原因我也不太清楚，但是最好还是按照设备的规格来找适配的连接硬件。因为在使用USRP的时候一般还需要联网，所以最好配双网卡，一张网卡连接外网一张网卡连接USRP设备。
@@ -36,13 +36,13 @@ sudo gnuradio-companion
 3.点击IPv4 Settings选项卡，吧Method从DHCP状态改成Manual，即手动配置IP。
 4.在下面地址栏添加一个新的地址：192.168.10.1-255.255.255.0-留空，点保存，DNS服务器可以不填。
 ```
-[这里写图片描述](/images/usrp_2.png)
+[这里写图片描述](/docs_zh/images/usrp_2.png)
 
 注意：这里配置的时候记得选择连接USRP的网卡，不要配错了。
 #### 测试连接
 配好网络后应该就会有提示网络已经连接，如果没有试试刷新一下网络连接。打开终端，ping USRP的地址ping 192.168.10.2，如果ping通了就代表连接成功了。
 
-[这里写图片描述](/images/usrp_3.png)
+[这里写图片描述](/docs_zh/images/usrp_3.png)
 #### 测试USRP驱动情况
 连接上了USRP还没有完成工作，还需要USRP的驱动UHD是不是匹配的，如果不匹配的话需要按照教程把和PC配对的固件烧录到USRP中。
 
