@@ -56,4 +56,18 @@ Options:
   -s <frequency>   采样频率 [Hz] (默认: 2600000)
   -b <iq_bits>     二进制文件格式 [1/8/16] (默认: 16)
   -v               更多细节信息
-  ```
+```
+#### 产生二进制文件
+项目页面上给了三种不同的输入坐标信息的方式：
+```Shell
+> gps-sdr-sim -e brdc3540.14n -u circle.csv
+> gps-sdr-sim -e brdc3540.14n -g triumphv3.txt
+> gps-sdr-sim -e brdc3540.14n -l 30.286502,120.032669,100
+```
+因为我们使用的是固定坐标和USRP的配置，所以我使用命令：
+```Shell
+> ./gps-sdr-sim -e brdc3540.14n -l [坐标] -s 2500000 -b 8
+```
+经过一段时间，就可以生成一个达到2.1G的二进制文件。
+
+提示：坐标信息可以在Google地图上左键点击你想要的位置查看到并输入。
