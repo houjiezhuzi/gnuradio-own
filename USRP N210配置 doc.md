@@ -41,8 +41,105 @@ sudo gnuradio-companion
 注意：这里配置的时候记得选择连接USRP的网卡，不要配错了。
 #### 测试连接
 配好网络后应该就会有提示网络已经连接，如果没有试试刷新一下网络连接。打开终端，ping USRP的地址ping 192.168.10.2，如果ping通了就代表连接成功了。
+
 [这里写图片描述](/images/usrp_3.png)
 #### 测试USRP驱动情况
 连接上了USRP还没有完成工作，还需要USRP的驱动UHD是不是匹配的，如果不匹配的话需要按照教程把和PC配对的固件烧录到USRP中。
 
 在终端中输入命令sudo uhd_usrp_probe，驱动成功的话会显示形如这样的信息：
+```Shell
+lauhoman@PC:~$ sudo uhd_usrp_probe 
+[sudo] password for lauhoman: 
+linux; GNU C++ version 4.8.2; Boost_105400; UHD_003.005.005-0-unknown
+
+-- Opening a USRP2/N-Series device...
+-- Current recv frame size: 1472 bytes
+-- Current send frame size: 1472 bytes
+  _____________________________________________________
+ /
+|       Device: USRP2 / N-Series Device
+|     _____________________________________________________
+|    /
+|   |       Mboard: N210r4
+|   |   hardware: 2577
+|   |   mac-addr: 00:80:2f:0a:eb:0e
+|   |   ip-addr: 192.168.10.2
+|   |   subnet: 255.255.255.255
+|   |   gateway: 255.255.255.255
+|   |   gpsdo: none
+|   |   serial: F4DE01
+|   |   FW Version: 12.3
+|   |   FPGA Version: 10.0
+|   |   
+|   |   Time sources: none, external, _external_, mimo
+|   |   Clock sources: internal, external, mimo
+|   |   Sensors: mimo_locked, ref_locked
+|   |     _____________________________________________________
+|   |    /
+|   |   |       RX DSP: 0
+|   |   |   Freq range: -50.000 to 50.000 Mhz
+|   |     _____________________________________________________
+|   |    /
+|   |   |       RX DSP: 1
+|   |   |   Freq range: -50.000 to 50.000 Mhz
+|   |     _____________________________________________________
+|   |    /
+|   |   |       RX Dboard: A
+|   |   |   ID: SBX (0x0054)
+|   |   |   Serial: F5B1E1
+|   |   |     _____________________________________________________
+|   |   |    /
+|   |   |   |       RX Frontend: 0
+|   |   |   |   Name: SBXv3 RX
+|   |   |   |   Antennas: TX/RX, RX2, CAL
+|   |   |   |   Sensors: lo_locked
+|   |   |   |   Freq range: 400.000 to 4400.000 Mhz
+|   |   |   |   Gain range PGA0: 0.0 to 31.5 step 0.5 dB
+|   |   |   |   Connection Type: IQ
+|   |   |   |   Uses LO offset: No
+|   |   |     _____________________________________________________
+|   |   |    /
+|   |   |   |       RX Codec: A
+|   |   |   |   Name: ads62p44
+|   |   |   |   Gain range digital: 0.0 to 6.0 step 0.5 dB
+|   |   |   |   Gain range fine: 0.0 to 0.5 step 0.1 dB
+|   |     _____________________________________________________
+|   |    /
+|   |   |       TX DSP: 0
+|   |   |   Freq range: -250.000 to 250.000 Mhz
+|   |     _____________________________________________________
+|   |    /
+|   |   |       TX Dboard: A
+|   |   |   ID: SBX (0x0055)
+|   |   |   Serial: F5B1E1
+|   |   |     _____________________________________________________
+|   |   |    /
+|   |   |   |       TX Frontend: 0
+|   |   |   |   Name: SBXv3 TX
+|   |   |   |   Antennas: TX/RX, CAL
+|   |   |   |   Sensors: lo_locked
+|   |   |   |   Freq range: 400.000 to 4400.000 Mhz
+|   |   |   |   Gain range PGA0: 0.0 to 31.5 step 0.5 dB
+|   |   |   |   Connection Type: QI
+|   |   |   |   Uses LO offset: No
+|   |   |     _____________________________________________________
+|   |   |    /
+|   |   |   |       TX Codec: A
+|   |   |   |   Name: ad9777
+|   |   |   |   Gain Elements: None
+```
+说明驱动成功，如果出现Error或者Warning，可以参考USRP配置与测试中对于FGPA的烧录步骤，对USRP的固件进行重新烧录。
+#### 测试子板工作情况
+打开终端，使用UHD的示例程序uhd_fft程序进行测试。
+```Shell
+sudo uhd_fft
+```
+如果成功可以看到如下界面，除此之外还可以看到底下的子板型号，说明子板安装正常。
+![usep4](/images/usrp_4.png)
+在我使用的子板下支持的频段可以收到信号，比如说2.4GHz的地方有很强的信号。
+#### 参考
+```
+1.[USRP配置与测试](https://www.jianshu.com/p/668fb403a1d5)
+2.[GNU Radio](https://www.gnuradio.org/)
+3.[Ettus-入门培训](http://www.ettus.com.cn/peixun/27/)
+```
