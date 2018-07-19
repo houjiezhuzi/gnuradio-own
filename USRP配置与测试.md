@@ -42,9 +42,38 @@ $ locate usrp_n210_r4_fpga_bin
  ```
  会有如下这个界面
  
+ ![1](/images/usrp_s_1.png)
+ 
  其中，firmware Image选取usrp_n210_r4_fpga_bin，FPGA image选取 usrp_n210_fw.bin，Network Address的 IP地址填的是USRP的IP地址，也就是 192.168.10.2 ，点击Burn Images 即可。
 #### 基本测试
 在GNU Radio和UHD中，均提供了若干个程序可以用来测试USRP和PC之间的连接。在运行程序时请以管理员权限执行。
 #### 基于GNU Radio 的测试
 我们可以运行 usrp_rx_cfile.py 这个程序。
 >注意：笔者运行凡是usrp开头的python文件，都会遇到 from gnuradio import usrp importerror cannot import name usrp,百度谷歌后觉得可能是usrp这个文件夹在用脚本文件编译的时候没有把usrp编译，导致报这个错误，具体解决办法还希望大神能够指导指导
+#### 更新：2016-1-12 12:00
+>对于上面问题所说的凡是usrp开头的python文件 都会遇到 from gnuradio import usrp importerror cannot import name usrp 。查了资料和问了一些大神，是因为最新版的gnuradio3.7.5已经用uhd文件将usrp 文件替换掉了，所以在安装完成之后，已经没有usrp这样的文件夹了，取而代之的是uhd文件夹。
+至于usrp一些的demo文件，比如usrp_fft.py已经被uhd_fft.grc替换了。所以我们可以直接运行uhd_fft.grc.我们可以先看下uhd 下面有那些文件。输入
+```Shell
+$ cd /usr/local/share/gnuradio/examples/uhd 
+$ ls
+ ```
+ 在这里我们可以看到uhd文件夹下的文件。
+ ![2](/images/usrp_s_2.png)
+ 我们可以跟以前的老版本的gnuradio下面usrp文件对比以下，可以发现，除了前面的usrp和uhd名字不一样，后面的很多文件都很相似。
+ ![3](/images/usrp_s_3.png)
+ 所以，我们如果要做测试的话，需要使用最新版本的demo来做测试，因为自己的电脑装的是最新的gnuradio，而如果用老版本的demo来做测试的话，很多的modlue都更新了，运行的时候就会报import error。
+ 
+ 现在，让我们来运行以下uhd_fft.grc这个文件，先进入这个文件所在的路径，直接输入 $ uhd_fft能够显示出这个界面，就说明usrp安装成功了
+ ![4](/images/usrp_s_4.png)
+ 上面的一些参数，我还是新手，也不太清楚（以后还是多多学习）
+ #### 基于UHD的测试
+ 我们可以直接在终端中输入以下命令，即可打印出usrp的一些参数。
+ ```Shell
+ $ sudo uhd_find_device
+ ```
+ 我们也可以输入以下命令,能够运行成功表明UHD和usrp安装成功了。
+ ```Shell
+ $sudo uhd_fft
+ ```
+ #### 总结
+ 第一次使用USRP时，先检查硬件配置是否设置成功，然后设置PC的IP地址，更新固件。
