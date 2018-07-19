@@ -139,8 +139,6 @@ sudo uhd_fft
 
 在我使用的子板下支持的频段可以收到信号，比如说2.4GHz的地方有很强的信号。
 #### 参考
-```
-1.[USRP配置与测试](https://www.jianshu.com/p/668fb403a1d5)
-2.[GNU Radio](https://www.gnuradio.org/)
-3.[Ettus-入门培训](http://www.ettus.com.cn/peixun/27/)
-```
+* 1.[USRP配置与测试](https://www.jianshu.com/p/668fb403a1d5)
+* 2.[GNU Radio](https://www.gnuradio.org/)
+* 3.[Ettus-入门培训](http://www.ettus.com.cn/peixun/27/)
