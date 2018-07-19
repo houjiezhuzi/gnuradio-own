@@ -42,7 +42,7 @@ $ locate usrp_n210_r4_fpga_bin
  ```
  会有如下这个界面
  
- ![1](/images/usrp_s_1.png)
+ ![1](/docs_zh/images/usrp_s_1.png)
  
  其中，firmware Image选取usrp_n210_r4_fpga_bin，FPGA image选取 usrp_n210_fw.bin，Network Address的 IP地址填的是USRP的IP地址，也就是 192.168.10.2 ，点击Burn Images 即可。
 #### 基本测试
@@ -58,17 +58,17 @@ $ cd /usr/local/share/gnuradio/examples/uhd
 $ ls
  ```
  在这里我们可以看到uhd文件夹下的文件。
- ![2](/images/usrp_s_2.png)
+ ![2](/docs_zh/images/usrp_s_2.png)
  
  我们可以跟以前的老版本的gnuradio下面usrp文件对比以下，可以发现，除了前面的usrp和uhd名字不一样，后面的很多文件都很相似。
  
- ![3](/images/usrp_s_3.png)
+ ![3](/docs_zh/images/usrp_s_3.png)
  
  所以，我们如果要做测试的话，需要使用最新版本的demo来做测试，因为自己的电脑装的是最新的gnuradio，而如果用老版本的demo来做测试的话，很多的modlue都更新了，运行的时候就会报import error。
  
  现在，让我们来运行以下uhd_fft.grc这个文件，先进入这个文件所在的路径，直接输入 $ uhd_fft能够显示出这个界面，就说明usrp安装成功了
  
- ![4](/images/usrp_s_4.png)
+ ![4](/docs_zh/images/usrp_s_4.png)
  
  上面的一些参数，我还是新手，也不太清楚（以后还是多多学习）
  #### 基于UHD的测试
