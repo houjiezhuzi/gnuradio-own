@@ -41,3 +41,10 @@ $ locate usrp_n210_r4_fpga_bin
  $./usrp_n2xx_net_burner_gui.py
  ```
  会有如下这个界面
+ 
+ 其中，firmware Image选取usrp_n210_r4_fpga_bin，FPGA image选取 usrp_n210_fw.bin，Network Address的 IP地址填的是USRP的IP地址，也就是 192.168.10.2 ，点击Burn Images 即可。
+#### 基本测试
+在GNU Radio和UHD中，均提供了若干个程序可以用来测试USRP和PC之间的连接。在运行程序时请以管理员权限执行。
+#### 基于GNU Radio 的测试
+我们可以运行 usrp_rx_cfile.py 这个程序。
+>注意：笔者运行凡是usrp开头的python文件，都会遇到 from gnuradio import usrp importerror cannot import name usrp,百度谷歌后觉得可能是usrp这个文件夹在用脚本文件编译的时候没有把usrp编译，导致报这个错误，具体解决办法还希望大神能够指导指导
